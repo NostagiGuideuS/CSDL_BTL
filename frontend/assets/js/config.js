@@ -19,4 +19,4 @@ let config = {
   }
 };
 
-let BASE_URL = "http://127.0.0.1:8080";
+let BASE_URL = "https://csdl-btl.onrender.com";
