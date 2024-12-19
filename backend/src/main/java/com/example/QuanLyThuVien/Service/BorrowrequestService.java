@@ -144,6 +144,12 @@ public class BorrowrequestService {
                         book.setQuantity(book.getQuantity() + 1);
                         bookRepository.save(book);
                     }
+                } else if ("pending".equals(currentStatus)) {
+                    // Nếu chuyển từ trạng thái "pending" sang "borrowed", trừ sách lại
+                    if (newStatus.equals("borrowed")) {
+                        book.setQuantity(book.getQuantity() - 1);
+                        bookRepository.save(book);
+                    }
                 }
 
             } catch (Exception e) {
